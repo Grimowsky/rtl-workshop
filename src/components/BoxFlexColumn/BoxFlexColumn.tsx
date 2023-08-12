@@ -5,7 +5,10 @@ interface BoxFlexColumn {
   children: React.ReactNode;
 }
 
-const BoxFlexColumn: React.FC<BoxFlexColumn> = ({ classNames = '', children }) => {
+const BoxFlexColumn: React.FC<BoxFlexColumn> = ({
+  classNames = '',
+  children,
+}) => {
   return <div className={cn('flex flex-col', classNames)}> {children} </div>;
 };
 
