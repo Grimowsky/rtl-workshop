@@ -6,6 +6,6 @@ import { describe, it } from 'vitest';
 describe('App basic test', () => {
   it('Should render greetings', () => {
     render(<App />);
-    expect(screen.getByText('hello there')).toBeDefined();
+    expect(screen.getByText('Hello world!')).toBeDefined();
   });
 });

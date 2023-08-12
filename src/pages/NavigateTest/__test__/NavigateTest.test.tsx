@@ -9,7 +9,7 @@ describe('Navigate test', () => {
       route: '/hello',
     });
 
-    await user.click(screen.getByText('navigate me back'));
+    await user.click(screen.getByText('Navigate ME'));
 
     expect(history.location.pathname).eq('/elsewhere');
   });

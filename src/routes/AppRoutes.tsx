@@ -1,6 +1,6 @@
 import { routes } from './routes.schema';
 import { Route, Routes } from 'react-router-dom';
-import { NavigateTest } from '../components/NavigateTest/NavigateTest';
+import { NavigateTest } from '../pages/NavigateTest/NavigateTest';
 
 export const AppRoutes = (): React.ReactElement => {
   return (
