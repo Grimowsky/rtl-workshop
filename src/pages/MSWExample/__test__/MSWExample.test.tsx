@@ -23,6 +23,15 @@ const handlers = [
   ),
 ];
 
+const errorHandlers = [
+  rest.get(
+    'https://jsonplaceholder.typicode.com/todos',
+    async (_req, res, ctx) => {
+      return res(ctx.status(500), ctx.json({ error: 'some error' }));
+    },
+  ),
+];
+
 const server: SetupServer = setupServer(...handlers);
 
 beforeAll(() => server.listen());
@@ -48,5 +57,12 @@ describe('MSWExample tests', () => {
     await waitForElementToBeRemoved(screen.queryByText(/loading.../i));
 
     expect(screen.getByText(/mocked msw response/i)).toBeInTheDocument();
+  });
+  it('handles api error', async () => {
+    server.resetHandlers(...errorHandlers);
+    const { user } = renderWithBrowser(<MSWExample />);
+    await user.click(screen.getByText(/get todos/i));
+
+    expect(screen.getByText(/error.../i)).toBeInTheDocument();
   });
 });

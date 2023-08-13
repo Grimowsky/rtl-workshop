@@ -31,6 +31,9 @@ const MSWExample: React.FC = () => {
       {apiStatus === 'pending' && (
         <BoxFlexColumn classNames="pt-6">loading...</BoxFlexColumn>
       )}
+      {apiStatus === 'failed' && (
+        <BoxFlexColumn classNames="pt-6">error...</BoxFlexColumn>
+      )}
       <BoxFlexColumn classNames="pt-6">
         {todos &&
           todos.map((todo) => (
