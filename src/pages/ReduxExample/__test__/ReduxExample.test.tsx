@@ -17,4 +17,8 @@ describe('ReduxExampleTests', () => {
     await user.click(screen.getByText(/increment/i));
     expect(screen.getByText(/current count: 1/i)).toBeInTheDocument();
   });
+  it('it is just to show how to mock store initial value', () => {
+    renderWithStore(<ReduxExample />, {}, { counter: { value: 2137 } });
+    expect(screen.getByText(/current count: 2137/i)).toBeInTheDocument();
+  });
 });

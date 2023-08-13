@@ -6,6 +6,7 @@ import getTestStore from '../store/getTestStore';
 import { Store } from '@reduxjs/toolkit';
 import { Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { RootState } from '../store';
 
 interface RenderWithStoreReturn {
   renderResult: RenderResult;
@@ -18,7 +19,7 @@ export const renderWithStore = (
     route = '/',
     history = createMemoryHistory({ initialEntries: [route] }),
   } = {},
-  state = {},
+  state = {} as Partial<RootState>,
 ): RenderWithStoreReturn => {
   return {
     renderResult: render(
