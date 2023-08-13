@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { store } from '../store';
 import { Provider } from 'react-redux';
+import ReduxExample from '../pages/ReduxExample/ReduxExample';
 export const createReduxExampleRoutes = () => {
   return (
     <>
@@ -10,7 +11,7 @@ export const createReduxExampleRoutes = () => {
         path={'redux/example'}
         element={
           <Provider store={store}>
-            <>redux testing example</>
+            <ReduxExample />
           </Provider>
         }
       />

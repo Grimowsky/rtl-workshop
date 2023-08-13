@@ -10,8 +10,8 @@ interface RenderWithProviders {
   user: UserEvent;
 }
 
-export const renderWithProviders = (
-  ui: React.ReactElement,
+export const renderWithBrowser = (
+  ui: React.ReactNode,
   {
     route = '/',
     history = createMemoryHistory({ initialEntries: [route] }),
@@ -20,7 +20,7 @@ export const renderWithProviders = (
   return {
     renderResult: render(
       <Router location={history.location} navigator={history}>
-        {ui}{' '}
+        {ui}
       </Router>,
     ),
     history,
