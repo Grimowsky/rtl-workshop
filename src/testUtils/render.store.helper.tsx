@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import getTestStore from '../store/getTestStore';
 import { Store } from '@reduxjs/toolkit';
 import { Router } from 'react-router-dom';
-import userEvent from '@testing-library/user-event/index';
+import userEvent from '@testing-library/user-event';
 
 interface RenderWithStoreReturn {
   renderResult: RenderResult;

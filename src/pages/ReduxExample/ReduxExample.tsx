@@ -20,7 +20,7 @@ const ReduxExample: React.FC = () => {
       <BoxFlexRow classNames="w-full place-content-around">
         <Button onClick={handleDecrement}>Decrement</Button>
         <div className="font-bold flex items-center">{`Current count: ${value}`}</div>
-        <Button onClick={handleIncrement}>Increase</Button>
+        <Button onClick={handleIncrement}>Increment</Button>
       </BoxFlexRow>
     </BoxFlexColumn>
   );
