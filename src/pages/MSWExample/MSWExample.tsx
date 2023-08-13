@@ -3,6 +3,7 @@ import BoxFlexColumn from '../../components/BoxFlexColumn/BoxFlexColumn';
 import { Button } from '../../components/Button/Button';
 import { fetchTodos, Todo } from '../../api/fetchTodo';
 import { ApiStatus } from '../../types.common';
+import * as crypto from 'crypto';
 
 const MSWExample: React.FC = () => {
   const [todos, setTodos] = React.useState<Todo[] | null>(null);
@@ -27,11 +28,19 @@ const MSWExample: React.FC = () => {
       >
         Get TODOs
       </Button>
+      {apiStatus === 'pending' && (
+        <BoxFlexColumn classNames="pt-6">loading...</BoxFlexColumn>
+      )}
       <BoxFlexColumn classNames="pt-6">
         {todos &&
           todos.map((todo) => (
-            <BoxFlexColumn classNames="w-full">
-              <div className="p-2 border-1 border-gray">{todo.title}</div>
+            <BoxFlexColumn classNames="w-full" key={crypto.randomUUID()}>
+              <div
+                className="p-2 border-1 border-gray"
+                key={crypto.randomUUID()}
+              >
+                {todo.title}
+              </div>
             </BoxFlexColumn>
           ))}
       </BoxFlexColumn>
