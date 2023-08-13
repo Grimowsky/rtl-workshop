@@ -10,7 +10,7 @@ interface RenderWithProviders {
   user: UserEvent;
 }
 
-export const renderWithProviders = (
+export const renderWithBrowser = (
   ui: React.ReactNode,
   {
     route = '/',
